@@ -1,0 +1,9 @@
+palo
+tenedor
+cuchara
+plato
+vaso
+olla
+sartén
+batidora
+horno

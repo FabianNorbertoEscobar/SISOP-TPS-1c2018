@@ -1,0 +1,7 @@
+<precios>
+	<producto>
+		<codigo>2</codigo>
+		<descripcion>tonner</descripcion>
+		<precio porcentaje="true">20</precio>
+	</producto>
+</precios>

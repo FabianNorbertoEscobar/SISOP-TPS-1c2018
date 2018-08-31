@@ -1,0 +1,409 @@
+﻿// Dicionário de Mensagens do Agente de Dispositivos 
+// -----------------------------------------------------------------------
+// Todas as mensagens específicas do agente de máquinas devem ter o prefixo "adco_" (ad = agente de dispositivos, co = contadoras)
+// Todas as mensagens específicas do agente de DVRs devem ter o prefixo "addv_" (ad = agente de dispositivos, dv = DVR)
+// Todas as mensagens comuns, geradas dentro do projeto Prosegur.AgenteDispositivos.Agente devem ter o prefixo "adge_" (ad = agente de dispositivos, ge = geral)
+// -----------------------------------------------------------------------
+
+// Mensagens Gerais (do Agente) - prefixo "adge_"
+
+adge_nome_aplicacao								= AGENTE DE DISPOSITIVOS
+adge_info_aplicacao								= Más informaciones..
+adge_question_saida								= Deseja encerrar a aplicação? 
+adge_question_tit_saida							= Informação
+adge_titulo_icone_sair							= &Cerrar Aplicación
+adge_tooltip_fechar								= Fechar
+adge_tooltip_atualizar							= Atualizar
+adge_tooltip_info								= Informações
+adge_tooltip_infoTit							= InformaçõesTitulo
+adge_titulo_icone_reiniciar						= Reiniciar componente
+adge_titulo_icone_versao						= Versión
+adge_titulo_versao								= Version del Sistema
+adge_titulo_tooltip_icone						= Agente de Dispositivos
+adge_titulo_tooltip_desconectado				= Ninguna aplicación conectada
+adge_titulo_tooltip_conectado					= Conectada al sistema
+// -----------------------------------------------------------------------
+
+//GENÉRICAS
+Gen_msg_atributo = Atributo {0} não informado.
+Gen_msg_naoimpementado							= Método não Implementado  
+Gen_msg_naosuportado							= Método não é Suportado pela classe
+// -----------------------------------------------------------------------
+
+// Mensagens Específicas do Agente de Máquinas Contadoras - prefixo "adco_"
+
+adco_erro_quantidade_parametros				= la cantidad de parámetros no es valida!
+adco_erro_valor_invalido_modelo_maquina		= El valor informado para el parámetro "Modelo de Máquina" no es válido
+adco_erro_modelo_maquina_nao_suportado		= El modelo de máquina informado no está soportado por la aplicación!
+adco_erro_desconhecido						= Ocurrió un error desconocido en la aplicación de interface con las contadoras. Verifique que la máquina está devidamente conectada al Pc. Si el problema persiste, contacte con el administrador del sistema.
+adco_erro_comunicacao_maquina				= No fué posible estabelecer conexión con la contadora. Verifique que la máquina está devidamente conectada al Pc. Si el problema persiste, contacte con el administrador del sistema.
+adco_erro_valor_invalido_porta_com			= El valor introducido para el puerto "COM" es inválido.
+adco_erro_maquina							= No fué posible estabelecer conexión con la contadora. Verifique que los compartimentos están devidamente cerrados. Si el problema persiste, contacte con el administrador del sistema.
+adco_erro_maquina_rede						= No fué posible estabelecer la conexión con lo directório. Verifique que los parâmetros fueron configurados corectamente en el "app.config". Si el problema persiste, contacte con el administrador del sistema.
+adco_msg_erro_conexao_contadora				= No fue posible conectar la contadora para contar.
+adco_msg_erro_porta_com						= No fue posible establecer una conexión con el puerto COM
+adco_msg_erro_fechar_porta_com				= No fue posible cerrar la conexión con el puerto COM
+adco_msg_erro_porta_auto_iniciar_contagem	= Auto Iniciar Conteo - No fue posible abrir el puerto de conexión
+adco_msg_erro_auto_inicializar				= No fue posible realizar la auto inicialización.
+adco_msg_retorno_comando_desconhecido		= Comando desconocido!
+adco_comando_nao_executado_tentar_novamente = Comando no ejecutado, intente de nuevo!
+adco_msg_erro_pegar_resposta				= Ocurrió un error al retornar la respuesta de la contadora.
+adco_msg_erro_executar_comando				= Ocurrió un error al ejecutar un comando de la máquina contadora.
+adco_msg_erro_contar						= Ocurrió un error al ejecutar el contage. Intentelo de nuevo!
+adco_erro_valor_invalido_porta_socket		= Puerto del socket inválido o no definido!
+adco_erro_divisa_contadora_nao_configurada	= La divisa {0} no está configurada para la contadora {1}.
+adco_erro_denominacion_divisa_nao_configurada	= La denominación {0} no está configurada para la divisa {1} en la contadora {2}.
+
+//teste de conexão das máquinas. Este é realizado quando passamos o parâmetro zero na chamada do sistema 
+//ex: maquina|porta|comando - 1|1|0
+
+adco_msg_retorno_status_falha				= La máquina no respondió correctamente!
+adco_msg_retorno_status_sucesso				= La máquina respondió correctamente!
+adco_msg_retorno_status_nao_suporta			= El modelo de máquina especificado no soporta prueba de conexión.
+
+// Mensagens de retorno (de inconsistências) durante a verificação de sensores ANTES da apuração
+// Valores para o sufixo da mensagem:
+//   0 - Nenhum sensor
+//   1 - Alimentador
+//   2 - Rejeito
+//   3 - Alimentador e Rejeito
+//   4 - Apurado
+//   5 - Alimentador e Apurado
+//   6 - Rejeito e Apurado
+//   7 - Alimentador, Rejeito e Apurado
+// Se for informada uma mensagem, o sistema não contará e retornará uma mensagem ao usuário.
+// Se não for informada uma mensagem, o sistema procederá para fazer a contagem.
+
+adco_msg_sensores_antes_0					= Coloque los billetes a ser contados en el alimentador!
+adco_msg_sensores_antes_1					= 
+adco_msg_sensores_antes_2					= Coloque los billetes a ser contados en el alimentador, y retire el dinero rechazado!
+adco_msg_sensores_antes_3					= Retire el dinero rechazado!
+adco_msg_sensores_antes_4					= Coloque los billetes a ser contados en el alimentador, y retire el dinero contado!
+adco_msg_sensores_antes_5					= Retire el dinero contado!
+adco_msg_sensores_antes_6					= Coloque los billetes a ser contados en el alimentador, y retire el dinero contado y el dinero rechazado!
+adco_msg_sensores_antes_7					= Retire el dinero contado y el dinero rechazado!
+
+// Mensagens de retorno após a contagem, de acordo com a situação dos sensores.
+// Os sufixos para a mensagem de acordo com a situação dos sensores são os mesmos das mensagens antes da apuração.
+
+adco_msg_sensores_depois_0					= 
+adco_msg_sensores_depois_1					= Verifique que no queden billetes pendientes de contar en el alimentador de la máquina.
+adco_msg_sensores_depois_2					= Retire los billetes rechazados.
+adco_msg_sensores_depois_3					= Retire los billetes rechazados, y verifique que no queden billetes pendientes de contar en el alimentador de la máquina.
+adco_msg_sensores_depois_4					= Retire los billetes contados.
+adco_msg_sensores_depois_5					= Retire los billetes rechazados, y verifique que no queden billetes pendientes de contar en el alimentador de la máquina.
+adco_msg_sensores_depois_6					= Retire los billetes contados e los rechazados.
+adco_msg_sensores_depois_7					= Retire los billetes rechazados, y verifique que no queden billetes pendientes de contar en el alimentador de la máquina.
+//------------------------------------------------------------
+
+//String de valores que referenciam as cedulas de acordo com a contagem.
+
+//Real
+//R1 = 1 real 
+//R2 = 2 reais 
+//R5 = 5 reais 
+//R10 = 10 reais comum 
+//R10 = 10 reais polímero 
+//R20 = 20 reais 
+//R50 = 50 reais 
+//R100 = 100 reais 
+
+codigo_cedulaReal_1_00						= R1
+codigo_cedulaReal_2_00						= R2
+codigo_cedulaReal_5_00						= R5
+codigo_cedulaReal_10_00						= R10
+codigo_cedulaReal_polimero_10_00			= R10
+codigo_cedulaReal_nova_10_00				= R10n
+codigo_cedulaReal_20_00						= R20
+codigo_cedulaReal_nova_20_00				= R20n
+codigo_cedulaReal_50_00						= R50
+codigo_cedulaReal_nova_50_00				= R50n
+codigo_cedulaReal_100_00					= R100
+codigo_cedulaReal_nova_100_00				= R100n
+//-------------------------------------------------------------
+
+//Euro
+//BE5 = 5 Euros 
+//BE10 = 10 Euros 
+//BE20 = 20 Euros 
+//BE50 = 50 Euros 
+//BE100 = 100 Euros 
+//BE200 = 200 Euros 
+//BE500 = 500 Euros
+
+// Genesis
+codigo_cedulaEur_5_00						= BE5
+codigo_cedulaEur_10_00						= BE10
+codigo_cedulaEur_20_00						= BE20
+codigo_cedulaEur_50_00						= BE50
+codigo_cedulaEur_100_00						= BE100
+codigo_cedulaEur_200_00						= BE200
+codigo_cedulaEur_500_00						= BE500
+
+// Procounter
+// codigo_cedulaEur_5_00						= 1a
+// codigo_cedulaEur_10_00						= 2a
+// codigo_cedulaEur_20_00						= 3a
+// codigo_cedulaEur_50_00						= 4a
+// codigo_cedulaEur_100_00						= 5a
+// codigo_cedulaEur_200_00						= 6a
+// codigo_cedulaEur_500_00						= 7a
+
+//-------------------------------------------------------------
+
+//Dolar
+//U1  = 1 Dolar 
+//U2  = 2 Dolares 
+//U5  = 5 Dolares 
+//U10 = 10 Dolares 
+//U20 = 20 Dolares 
+//U50 = 50 Dolares 
+//U100=100 Dolares 
+
+codigo_cedulaUsd_1_00						= U1
+codigo_cedulaUsd_2_00						= U2
+codigo_cedulaUsd_5_00						= U5
+codigo_cedulaUsd_10_00						= U10
+codigo_cedulaUsd_20_00						= U20
+codigo_cedulaUsd_50_00						= U50
+codigo_cedulaUsd_100_00						= U100
+//-------------------------------------------------------------
+
+//Libra
+//L1   = 1 Libra 
+//L5   = 5 Libras 
+//L10  = 10 Libras 
+//L20  = 20 Libras 
+//L50  = 50 Libras 
+//L100 = 100 Libras
+
+codigo_cedulaLib_1_00						= L1
+codigo_cedulaLib_5_00						= L5
+codigo_cedulaLib_10_00						= L10
+codigo_cedulaLib_20_00						= L20
+codigo_cedulaLib_50_00						= L50
+codigo_cedulaLib_100_00						= L100
+//-------------------------------------------------------------
+
+//Peso Argentino
+//P2 = 2 Peso 
+//P5 = 5 Pesos 
+//P10 = 10 Pesos 
+//P20 = 20 Pesos 
+//P50 = 50 Pesos 
+//P100 = 100 Pesos
+
+codigo_cedulaPesoArg_1_00					= P1
+codigo_cedulaPesoArg_2_00					= P2
+codigo_cedulaPesoArg_5_00					= P5
+codigo_cedulaPesoArg_10_00					= P10
+codigo_cedulaPesoArg_20_00					= P20
+codigo_cedulaPesoArg_50_00					= P50
+codigo_cedulaPesoArg_100_00					= P100
+
+//-------------------------------------------------------------
+
+//Peso Mexicano
+//M20 = 20 Peso 
+//M50 = 50 Pesos 
+//M100 = 100 Pesos 
+//M200 = 200 Pesos 
+//M500 = 500 Pesos 
+//M1000 = 1000 Pesos
+
+codigo_cedulaPesoMex_20_00					= M20
+codigo_cedulaPesoMex_50_00					= M50
+codigo_cedulaPesoMex_100_00					= M100
+codigo_cedulaPesoMex_200_00					= M200
+codigo_cedulaPesoMex_500_00					= M500
+codigo_cedulaPesoMex_1000_00				= M1000
+
+//-------------------------------------------------------------
+//Peso Colombiano
+//C1000 = 1000 Pesos
+//C2000 = 2000 Pesos 
+//C5000 = 5000 Pesos 
+//C10000 = 10000 Pesos 
+//C20000 = 20000 Pesos 
+//C50000 = 50000 Pesos
+
+codigo_cedulaPesoCol_1000_00					= M1000
+codigo_cedulaPesoCol_2000_00					= M2000
+codigo_cedulaPesoCol_5000_00					= M5000
+codigo_cedulaPesoCol_10000_00					= M10000
+codigo_cedulaPesoCol_20000_00					= M20000
+codigo_cedulaPesoCol_50000_00					= M50000
+
+//-------------------------------------------------------------
+
+//Código de moedas EUR
+
+// Genesis
+codigo_moedaEur_12_00					= ME12
+codigo_moedaEur_2_00						= ME2
+codigo_moedaEur_1_00						= ME1
+codigo_moedaEur_050_00					= ME50C
+codigo_moedaEur_020_00					= ME20C
+codigo_moedaEur_010_00					= ME10C
+codigo_moedaEur_05_00					= ME5C
+codigo_moedaEur_02_00					= ME2C
+codigo_moedaEur_01_00					= ME1C
+
+// Procounter
+// codigo_moedaEur_12_00					= E0
+// codigo_moedaEur_2_00						= E1
+// codigo_moedaEur_1_00						= E2
+// codigo_moedaEur_050_00					= E3
+// codigo_moedaEur_020_00					= E4
+// codigo_moedaEur_010_00					= E5
+// codigo_moedaEur_05_00					= E6
+// codigo_moedaEur_02_00					= E7
+// codigo_moedaEur_01_00					= E8
+
+//Valores
+valor_moeda_Eur_12_00						= 12
+valor_moeda_Eur_2_00						= 2
+valor_moeda_Eur_1_00						= 1
+valor_moeda_Eur_050_00						= 0,5
+valor_moeda_Eur_020_00						= 0,2
+valor_moeda_Eur_010_00						= 0,1
+valor_moeda_Eur_05_00						= 0,05
+valor_moeda_Eur_02_00						= 0,02
+valor_moeda_Eur_01_00						= 0,01
+//-------------------------------------------------------------
+
+//Valores
+codigo_moeda_Brl_1_00						= q
+codigo_moeda_Brl_050_00						= w
+codigo_moeda_Brl_025_00						= e
+codigo_moeda_Brl_010_00						= r
+codigo_moeda_Brl_05_00						= t
+codigo_moeda_Brl_01_00						= y
+
+//Valores
+valor_moeda_Brl_1_00						= 1
+valor_moeda_Brl_050_00						= 0,50
+valor_moeda_Brl_025_00						= 0,25
+valor_moeda_Brl_010_00						= 0,10
+valor_moeda_Brl_05_00						= 0,05
+valor_moeda_Brl_01_00						= 0,01
+
+//-------------------------------------------------------------
+
+//utilizado na função de LOG do sistema
+
+usuario = Usuário:  
+dtcriacao = Data: 
+lg_impr_ret_aplicacao = Retorno da Aplicação	: 
+lg_impr_stat_aplicacao = Status da comunicação	: 
+lg_erro = Erro
+lg_sucesso = Sucesso
+lg_tipo_comando = Tipo de Comando		: 
+lg_porta_comunicacao = Porta de comunicação	:COM
+lg_classe_utilizada = Classe			: 
+lg_mensagem = Mensaje		:
+lg_host = host			:
+lg_tempo_exibicao = Tempo de exibição	:
+lg_exibe_camera = Exibir Câmera		:
+lg_camera = Câmera			:
+lg_senha = Senha			:
+lg_usuario = Usuário			:
+lg_ip = IP			:
+msg_contagem_numerario = Contagem de numerário 
+msg_teste_conexao = Teste de Conexão
+lg_parametros = Parâmetro passado	:
+lg_classe_inexistente = Classe informada não encontrada
+msg_classe = Classe:
+msg_metodo = Método:
+lg_informacao = Log de Informação
+lg_inf_erro = Log de Erro
+lg_inf_mensagem = Mensaje: 
+lg_inf_stack_trace = StackTrace:
+lg_inicio_ejecucion_comando = Inicio de la Ejecución del comando
+// -----------------------------------------------------------------------
+
+// Mensagens Específicas do Agente de DVRs - prefixo "addv_"
+
+addv_erro_valor_invalido_mensage			= No existe un mensaje válido para enviar!
+addv_erro_modelo_dvr_nao_suportado			= El modelo de DVR informado no es soportado por la aplicación!
+addv_erro_valor_invalido_camera				= Camara informada no válida!
+addv_erro_valor_invalido_senha_dvr			= El campo clave no es correcto!
+addv_erro_valor_invalido_usuario_dvr		= Usuario no definido para acceder a DVR!
+addv_erro_ip_invalido_dvr					= Dirección IP inválida, reviselo e intente de nuevo!
+addv_erro_quantidade_parametros				= Cantidad de parametros inválida!
+addv_erro_quantidade_parametros_comp_vpon	= La cantidad de parametros a ser enviada al objeto del Componente Vpon no es válida!
+addv_erro_desconhecido						= Error desconocido en el componente de DVR!
+addv_erro_timeout_comp_vpon					= Error de Timeout en el componente Vpon.
+// -----------------------------------------------------------------------
+
+// Mensagens Específicas do Agente de Display - prefixo "addi_"
+
+addi_erro_quantidade_parametros				= Cantidad de parametros inválida!
+addi_erro_valor_invalido_modelo_maquina		= El modelo de Display informado no es soportado por la aplicación!
+addi_erro_valor_invalido_porta_com			= El valor informado para "Puerto COM" no es válido!
+addi_erro_valor_invalido_porta				= El valor informado para "Puerto" no es válido!
+addi_erro_valor_invalido_mensagem			= No existe un mensaje valido para enviar!
+addi_erro_modelo_maquina_nao_suportado		= El valor informado para el parametro "Modelo Display" es inválido
+addi_erro_xml_atributo_invalido				= El atributo {0} es inválido para objeto del tipo {1}
+// -----------------------------------------------------------------------
+
+// ************************** Não alterar estas chaves - Inicio **************************
+//Valores das notas
+
+codigo_cedula_valor_1_00					= 1
+codigo_cedula_valor_2_00					= 2
+codigo_cedula_valor_5_00					= 5
+codigo_cedula_valor_10_00					= 10
+codigo_cedula_valor_20_00					= 20
+codigo_cedula_valor_50_00					= 50
+codigo_cedula_valor_100_00					= 100
+codigo_cedula_valor_200_00					= 200
+codigo_cedula_valor_500_00					= 500
+codigo_cedula_valor_1000_00					= 1000
+codigo_cedula_valor_2000_00					= 2000
+codigo_cedula_valor_5000_00					= 5000
+codigo_cedula_valor_10000_00				= 10000
+codigo_cedula_valor_20000_00				= 20000
+codigo_cedula_valor_50000_00				= 50000
+//-------------------------------------------------------------
+
+//Referente aos códigos de cédulas da Numeron
+//Real
+Numeron_cedula_id_12289						= codigo_cedulaReal_1_00
+Numeron_cedula_id_12294						= codigo_cedulaReal_2_00
+Numeron_cedula_id_12290						= codigo_cedulaReal_5_00
+Numeron_cedula_id_12291						= codigo_cedulaReal_10_00
+Numeron_cedula_id_12307						= codigo_cedulaReal_polimero_10_00
+Numeron_cedula_id_12295						= codigo_cedulaReal_20_00
+Numeron_cedula_id_12292						= codigo_cedulaReal_50_00
+Numeron_cedula_id_12293						= codigo_cedulaReal_100_00
+//Euro
+Numeron_cedula_id_4609						= codigo_cedulaEur_5_00
+Numeron_cedula_id_4610						= codigo_cedulaEur_10_00
+Numeron_cedula_id_4611						= codigo_cedulaEur_20_00
+Numeron_cedula_id_4612						= codigo_cedulaEur_50_00
+Numeron_cedula_id_4613						= codigo_cedulaEur_100_00
+Numeron_cedula_id_4614						= codigo_cedulaEur_200_00
+Numeron_cedula_id_4615						= codigo_cedulaEur_500_00
+//Peso Argentino
+//Numeron_cedula_id_1553					= codigo_cedulaPesoArg_1_00
+Numeron_cedula_id_1554						= codigo_cedulaPesoArg_2_00
+Numeron_cedula_id_1555						= codigo_cedulaPesoArg_5_00
+Numeron_cedula_id_1556						= codigo_cedulaPesoArg_10_00
+Numeron_cedula_id_1557						= codigo_cedulaPesoArg_20_00
+Numeron_cedula_id_1558						= codigo_cedulaPesoArg_50_00
+Numeron_cedula_id_1559						= codigo_cedulaPesoArg_100_00
+//Dolar
+Numeron_cedula_id_3585						= codigo_cedulaUsd_1_00
+Numeron_cedula_id_3586						= codigo_cedulaUsd_2_00
+Numeron_cedula_id_3587						= codigo_cedulaUsd_5_00
+Numeron_cedula_id_3588						= codigo_cedulaUsd_10_00
+Numeron_cedula_id_3589						= codigo_cedulaUsd_20_00
+Numeron_cedula_id_3590						= codigo_cedulaUsd_50_00
+Numeron_cedula_id_3591						= codigo_cedulaUsd_100_00
+//-------------------------------------------------------------
+// ************************** Não alterar estas chaves - FIM **************************
+
+
+
+

@@ -1,0 +1,4 @@
+Calculator.exe
+notepad++.exe
+WINWORD.exe
+chrome.exe

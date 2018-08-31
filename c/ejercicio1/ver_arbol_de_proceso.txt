@@ -1,0 +1,7 @@
+Para ver el arbol de procesos de un proceso en linea de comandos poner
+
+	 ps f -numeroDePid
+
+ejemplo:
+	ps f -4790
+

@@ -1,0 +1,22 @@
+P|¿Qué tipo de interrupción es un stack overflow?
+R|1-Software
+C|2-Hardware – Interna
+R|3-Hardware – Externa
+R|4-Ninguna de las anteriores
+P|¿Qué tipo de interrupción es un fin de lectura de disco?
+R|1-Software
+R|2-Hardware – Interna
+C|3-Hardware – Externa
+R|4-Ninguna de las anteriores
+P|¿Qué tipo de interrupción es una solicitud de escritura en disco?
+C|1-Software
+R|2-Hardware – Interna
+R|3-Hardware – Externa
+R|4-Hardware y software
+R|5-Ninguna de las anteriores
+P|¿Qué tipo de interrupción es una solicitud de escritura en disco?
+C|1-Software
+R|2-Hardware – Interna
+R|3-Hardware – Externa
+R|4-Hardware y software
+R|5-Ninguna de las anteriores

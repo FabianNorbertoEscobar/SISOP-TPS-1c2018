@@ -1,0 +1,9 @@
+- Pararse en el directorio de los archivos c
+- Abrir dos terminales
+- En una para el servidor compilar:
+gcc -o servidor ./servidor.c -lpthread
+- En la otra para el cliente compilar:
+gcc -o cliente ./cliente.c -lpthread
+- Correr primero el ejecutable del servidor y luego en la otra terminal el del cliente (recibe como parametro la ip, lo probe con el de localhost):
+./servidor
+./cliente 127.0.0.1
